@@ -11,7 +11,7 @@ public class BookStore {
     public void addBoooks() {
         int count = 0; //spravne cislo nacti od uzivatele, použij scanner
         //books = new ....
-        for (int i=0; i<count; count++){
+        for (int i=0; i<count; i++){
             //nacti od uzivatele nazev, rok vydani, pocet stranek a zanr
             //pridej knihu do pole knih
         }
