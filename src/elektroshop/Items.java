@@ -10,7 +10,7 @@ public class Items {
      */
     public void addItems(int count) {
       //  items = new ....
-        for (int i=0; i<count; count++){
+        for (int i=0; i<count; i++){
             //nacti od uzivatele míru spotreby a rok výroby ledničky
             //pridej lednicku do pole lednicek
         }
