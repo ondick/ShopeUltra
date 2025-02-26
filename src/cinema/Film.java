@@ -15,7 +15,7 @@ public class Film {
      */
     public void addActors(int count) {
         //actors = new ....
-        for (int i=0; i<count; count++){
+        for (int i=0; i<count; i++){
             //nacti od uzivatele jmeno, rodne mesto a pohlavi herce
             //pridej herce do pole hercu
         }
