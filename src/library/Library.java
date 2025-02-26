@@ -5,7 +5,7 @@ public class Library {
 
 	public void addItems(int count) {
 		//  items = new ....
-		for (int i=0; i<count; count++){
+		for (int i=0; i<count; i++){
 			//vytvor instanci
 			//pridej instanci do pole
 
