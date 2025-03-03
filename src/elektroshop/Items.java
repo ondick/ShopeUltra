@@ -1,6 +1,8 @@
-package elektroshop;
 
+package elektroshop;
+import java.util.Scanner;
 public class Items {
+    static Scanner sc = new Scanner(System.in);
     private Fridge[] items;
 
 
@@ -9,8 +11,29 @@ public class Items {
      * @param count - pozadovany pocet lednicek
      */
     public void addItems(int count) {
-      //  items = new ....
+        Scanner sc = new Scanner(System.in);
+        items = new Fridge[count];
+
         for (int i=0; i<count; i++){
+            System.out.print("Zadej detailz o lednici: "+(i+1));
+
+            System.out.println("Zadej rok vyroby");
+            int rokVyroby = sc.nextInt();
+
+            System.out.println("Znacka: ");
+            String znacka = sc.nextLine();
+
+            System.out.println("Model: ");
+            String model = sc.nextLine();
+
+            System.out.print("Mira spotreby A, B, C, D, E, F, G: ");
+
+
+            String energieString = sc.nextLine().toLowerCase();
+            Energie energie = Energie.valueOf(energieString);
+            items[i] = new Fridge(energie,znacka,model,rokVyroby);
+
+
             //nacti od uzivatele míru spotreby a rok výroby ledničky
             //pridej lednicku do pole lednicek
         }
@@ -25,7 +48,18 @@ public class Items {
      */
     public void printInfo(){
         System.out.println("-----INFO O LEDNICKACH-----");
-        //sem dopln kod
+        for (int i=0; i<items.length; i++){
+            System.out.println(items[i].toString());
+
+        }
         System.out.println("-----");
+    }
+    public void vypisPolozek(){
+        for (Energie energie: Energie.values()){
+            System.out.println(energie.toString());
+
+
+        }
+
     }
 }
