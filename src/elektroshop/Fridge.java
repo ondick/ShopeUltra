@@ -12,8 +12,35 @@ public class Fridge {
         this.znacka = znacka;
         this.rokVyroby = rokVyroby;
     }
-    public void printInfo(){
-        System.out.println(rokVyroby +": "+ energie);
+
+    public Energie getEnergie() {
+        return energie;
     }
 
+    public int getRokVyroby() {
+        return rokVyroby;
+    }
+public void printInfo(){
+    System.out.print(getRokVyroby()+": ");
+    switch (energie){
+        case A:
+            System.out.println("very low");
+            break;
+        case B:
+            System.out.println("low");
+            break;
+        case C:
+            System.out.println("normal");
+            break;
+        case D:
+            System.out.println("above normal");
+            break;
+        case F:
+            System.out.println("high");
+            break;
+        case G:
+            System.out.println("extremly high");
+            break;
+    }
+}
 }

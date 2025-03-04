@@ -49,6 +49,9 @@ public class Main {
                     sc.nextLine();
                     items.addItems(pocet);
                     items.printInfo();
+                    items.printNarocnost();
+                    items.printPocetPolozek();
+                    items.printZajimavosti();
                     break;
                 case "5":
                     Library library = new Library();
