@@ -1,19 +1,43 @@
 package bookstore;
+import elektroshop.Energie;
+import elektroshop.Fridge;
 
+import java.util.Scanner;
 
 public class BookStore {
     private String name;
     private Book[] books;
+    Scanner sc = new Scanner(System.in);
+
+    public BookStore(String name) {
+        this.name = name;
+    }
 
     /**
      * Metoda se zepta uzivatele na informace k pozadovanemu poctu knih. A ty prida do pole knih.
      */
-    public void addBoooks() {
-        int count = 0; //spravne cislo nacti od uzivatele, použij scanner
-        //books = new ....
+    public void addBoooks(int count) {
+        Scanner sc = new Scanner(System.in);//spravne cislo nacti od uzivatele, použij scanner
+
+        books = new Book[count];
+
         for (int i=0; i<count; i++){
-            //nacti od uzivatele nazev, rok vydani, pocet stranek a zanr
-            //pridej knihu do pole knih
+            System.out.println("Zadej detailz o knize: "+(i+1));
+
+            System.out.println("Zadej nazev knihy ");
+            String nazev = sc.nextLine();
+
+            System.out.println("Zadej rok vydani: ");
+            int rokVydani = sc.nextInt();
+
+            System.out.println("Zadej pocet stranek: ");
+            int delkaKnihy = sc.nextInt();
+
+            System.out.print("Napiš žánr knihy(roman,scifi,detektivka): ");
+
+            String zanrString = sc.nextLine().toLowerCase();
+            Zanr zanr = Zanr.valueOf(zanrString);
+            books[i] = new Book(nazev,rokVydani,delkaKnihy,zanr);
         }
 
     }
@@ -25,7 +49,20 @@ public class BookStore {
      */
     public void printInfo(){
         System.out.println("-----INFO O KNIHKUPECTVI-----");
-        //sem dopln kod
+        System.out.println(name+".");
+        System.out.println("Na skladě máme tyto knihy: ");
+        for (int i=0; i<books.length; i++){
+            books[i].printInfo();
+        }
+
+
+
         System.out.println("-----");
     }
+    public void printDelkaKnihy(){
+
+
+
+    }
+
 }

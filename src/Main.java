@@ -7,6 +7,8 @@ import library.Book;
 import library.Library;
 import moviestore.MovieDatabase;
 
+import javax.xml.namespace.QName;
+
 public class Main {
 
     static Scanner sc = new Scanner(System.in);
@@ -30,9 +32,12 @@ public class Main {
                     carDatabase.printCarWithMostKms();
                     break;
                 case "2":
-                    BookStore knihkupectvi = new BookStore();
-                    knihkupectvi.addBoooks();
+                    BookStore knihkupectvi = new BookStore("Knihkupectvi");
+                    System.out.println("Kolik si prejete pridat položek?");
+                    pocet = sc.nextInt();
+                    knihkupectvi.addBoooks(pocet);
                     knihkupectvi.printInfo();
+                    knihkupectvi.printDelkaKnihy();
                     break;
                 case "3":
                     Film film = new Film();

@@ -42,9 +42,7 @@ public class CarDatabase {
             }*/
 
             String conditionString = scanner.nextLine().toLowerCase();
-
             Condition condition = Condition.valueOf(conditionString);
-
             cars[i] = new Car(yearOfManufacture, mileage, color, condition);
         }
 
